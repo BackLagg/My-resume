@@ -212,6 +212,7 @@ $accent-to: #8affdf;
 .gallery {
   padding: 0 2rem 2rem 2rem;
   animation: slideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 
   @media (max-width: 768px) {
     padding: 0 1.5rem 1.5rem 1.5rem;
@@ -305,7 +306,9 @@ $accent-to: #8affdf;
   font-weight: 500;
   transition: all 0.3s ease;
   font-size: 0.95rem;
-  position: relative;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
   pointer-events: auto;
 
   svg {
@@ -319,5 +322,17 @@ $accent-to: #8affdf;
     svg {
       transform: translate(2px, -2px);
     }
+  }
+
+  @media (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
 }
