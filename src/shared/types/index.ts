@@ -3,6 +3,8 @@ export interface Project {
   description: string
   tech: string[]
   link?: string
+  images?: string[]
+  preview?: string
 }
 
 export interface ContactLink {

@@ -1,4 +1,4 @@
-import { ProjectCard } from '@/entities/project'
+import { ExpandableProjectCard } from '@/entities/project'
 import { projects } from '@/shared/config'
 import { AnimatedSection } from '@/shared/ui'
 import styles from './Projects.module.scss'
@@ -8,9 +8,9 @@ export const Projects = () => {
     <AnimatedSection delay={200}>
       <div className={styles.section}>
         <h2 className={styles.title}>Портфолио</h2>
-        <div className={styles.grid}>
+        <div className={styles.projectsList}>
           {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} index={index} />
+            <ExpandableProjectCard key={index} project={project} index={index} />
           ))}
         </div>
       </div>

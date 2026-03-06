@@ -12,6 +12,18 @@ $accent-text: #08142c;
   transition: all 0.3s ease;
   cursor: pointer;
   display: inline-block;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
 }
 
 .primary {

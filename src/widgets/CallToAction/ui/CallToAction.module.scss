@@ -22,12 +22,28 @@ $accent-to: #8affdf;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.7rem;
+  }
 }
 
 .text {
   font-size: 1.2rem;
   color: #ccc;
   margin: 0 0 2rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 }
 
 .buttons {
@@ -44,5 +60,12 @@ $accent-to: #8affdf;
 
   .buttons {
     flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem;
   }
 }
