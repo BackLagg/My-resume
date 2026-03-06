@@ -1,6 +1,23 @@
 import { Project } from '../types'
+import portfolio1Image1 from '@/assets/portfolio1/Снимок экрана 2026-03-06 231852.png'
+import portfolio1Image2 from '@/assets/portfolio1/Снимок экрана 2026-03-06 231926.png'
+import portfolio1Image3 from '@/assets/portfolio1/Снимок экрана 2026-03-06 231950.png'
+import portfolio1Image4 from '@/assets/portfolio1/Снимок экрана 2026-03-06 232022.png'
 
 export const projects: Project[] = [
+  {
+    title: 'Образовательная платформа "Futurion"',
+    description: 'Интерактивная платформа обучения с модульной системой уроков, прогрессом студентов, видео-контентом и Telegram-ботом для уведомлений',
+    tech: ['React', 'Node.js', 'Express', 'Python', 'Aiogram 3.x', 'MongoDB', 'Redux', 'Docker', 'Nginx', 'VPS'],
+    preview: portfolio1Image1,
+    images: [
+      portfolio1Image1,
+      portfolio1Image2,
+      portfolio1Image3,
+      portfolio1Image4,
+    ],
+    link: 'https://t.me/ElitLegionBot',
+  },
   {
     title: 'Веб-сервисы с авторизацией',
     description: 'Полный цикл разработки веб-приложений с системой аутентификации, админ-панелью и интеграцией внешних API',

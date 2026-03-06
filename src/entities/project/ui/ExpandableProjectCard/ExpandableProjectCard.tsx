@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Project } from '@/shared/types'
 import styles from './ExpandableProjectCard.module.scss'
 
@@ -7,8 +7,13 @@ interface ExpandableProjectCardProps {
   index: number
 }
 
+interface ImageDimensions {
+  [key: string]: 'vertical' | 'horizontal'
+}
+
 export const ExpandableProjectCard = ({ project, index }: ExpandableProjectCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [imageDimensions, setImageDimensions] = useState<ImageDimensions>({})
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded)
@@ -17,10 +22,37 @@ export const ExpandableProjectCard = ({ project, index }: ExpandableProjectCardP
   const displayImages = project.images || []
   const previewImage = project.preview || displayImages[0]
 
+  useEffect(() => {
+    const loadImageDimensions = async () => {
+      const dimensions: ImageDimensions = {}
+      
+      for (const image of displayImages) {
+        const img = new Image()
+        img.src = image
+        
+        await new Promise((resolve) => {
+          img.onload = () => {
+            dimensions[image] = img.height > img.width ? 'vertical' : 'horizontal'
+            resolve(null)
+          }
+          img.onerror = () => {
+            dimensions[image] = 'horizontal'
+            resolve(null)
+          }
+        })
+      }
+      
+      setImageDimensions(dimensions)
+    }
+
+    if (displayImages.length > 0) {
+      loadImageDimensions()
+    }
+  }, [displayImages])
+
   return (
     <div className={`${styles.card} ${isExpanded ? styles.expanded : ''}`}>
       <div className={styles.cardContent} onClick={handleToggle}>
-        {/* Превью изображение */}
         <div className={styles.preview}>
           {previewImage ? (
             <img 
@@ -50,7 +82,6 @@ export const ExpandableProjectCard = ({ project, index }: ExpandableProjectCardP
           </div>
         </div>
 
-        {/* Информация о проекте */}
         <div className={styles.info}>
           <h3 className={styles.title}>{project.title}</h3>
           <p className={styles.description}>{project.description}</p>
@@ -62,19 +93,24 @@ export const ExpandableProjectCard = ({ project, index }: ExpandableProjectCardP
         </div>
       </div>
 
-      {/* Раскрывающаяся секция с галереей */}
       {isExpanded && displayImages.length > 0 && (
         <div className={styles.gallery}>
           <div className={styles.galleryGrid}>
-            {displayImages.map((image, idx) => (
-              <div key={idx} className={styles.galleryItem}>
-                <img 
-                  src={image} 
-                  alt={`${project.title} - изображение ${idx + 1}`}
-                  className={styles.galleryImage}
-                />
-              </div>
-            ))}
+            {displayImages.map((image, idx) => {
+              const orientation = imageDimensions[image] || 'horizontal'
+              return (
+                <div 
+                  key={idx} 
+                  className={`${styles.galleryItem} ${styles[orientation]}`}
+                >
+                  <img 
+                    src={image} 
+                    alt={`${project.title} - изображение ${idx + 1}`}
+                    className={styles.galleryImage}
+                  />
+                </div>
+              )
+            })}
           </div>
           {project.link && (
             <a 

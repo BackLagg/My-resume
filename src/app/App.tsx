@@ -5,6 +5,7 @@ import { Skills } from '@/widgets/Skills'
 import { Projects } from '@/widgets/Projects'
 import { CallToAction } from '@/widgets/CallToAction'
 import { Footer } from '@/widgets/Footer'
+import { GridBackground } from '@/shared/ui/GridBackground'
 import styles from './App.module.scss'
 
 export const App = () => {
@@ -15,13 +16,16 @@ export const App = () => {
   }, [])
 
   return (
-    <main className={`${styles.app} ${isVisible ? styles.visible : ''}`}>
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <CallToAction />
-      <Footer />
-    </main>
+    <>
+      <GridBackground />
+      <main className={`${styles.app} ${isVisible ? styles.visible : ''}`}>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <CallToAction />
+        <Footer />
+      </main>
+    </>
   )
 }

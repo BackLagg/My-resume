@@ -7,6 +7,10 @@ $accent-text: #08142c;
   padding: 4rem 2rem;
   margin-bottom: 3rem;
   position: relative;
+  background: rgba(5, 10, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(124, 124, 255, 0.1);
 
   &::before {
     content: '';
