@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "noEmit": true
+  },
+  "include": ["vite.config.js"]
+}

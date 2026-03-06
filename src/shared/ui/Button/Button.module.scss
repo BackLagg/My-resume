@@ -1,0 +1,38 @@
+$radius-sm: 1rem;
+$accent-from: #7c7cff;
+$accent-to: #8affdf;
+$accent-text: #08142c;
+
+.button {
+  padding: 1rem 2.5rem;
+  border-radius: $radius-sm;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.primary {
+  background: linear-gradient(135deg, $accent-from, $accent-to);
+  color: $accent-text;
+  border: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(124, 124, 255, 0.4);
+  }
+}
+
+.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+  }
+}

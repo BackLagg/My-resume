@@ -1,0 +1,63 @@
+$font-base: 'Inter', 'Segoe UI', system-ui, sans-serif;
+$color-text: #f4f4f4;
+$color-bg: #050a14;
+$color-bg-deep: #04070f;
+$glow-top: rgba(124, 124, 255, 0.2);
+$glow-bottom: rgba(138, 255, 223, 0.2);
+
+:root {
+  font-family: $font-base;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $color-text;
+  background-color: $color-bg;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 10%, $glow-top, transparent 50%),
+    radial-gradient(circle at 80% 90%, $glow-bottom, transparent 50%),
+    $color-bg-deep;
+  background-attachment: fixed;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(124, 124, 255, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg-deep;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(124, 124, 255, 0.5), rgba(138, 255, 223, 0.5));
+  border-radius: 5px;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(124, 124, 255, 0.7), rgba(138, 255, 223, 0.7));
+  }
+}
