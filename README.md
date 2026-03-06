@@ -1,16 +1,53 @@
-# React + Vite
+# My Resume - Fullstack Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современное landing-резюме с красивыми анимациями, построенное по архитектуре Feature-Sliced Design.
 
-Currently, two official plugins are available:
+## 🚀 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React 19, TypeScript, SCSS Modules
+- **Сборка**: Vite
+- **Архитектура**: Feature-Sliced Design (FSD)
+- **Деплой**: Docker + Nginx
 
-## React Compiler
+## ✨ Особенности
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🎨 Современный дизайн с градиентами и glassmorphism эффектами
+- ✨ Плавные анимации появления контента при скролле
+- 📱 Адаптивная верстка для всех устройств
+- 🏗️ Чистая архитектура FSD с переиспользуемыми компонентами
+- 🐳 Docker-конфигурация для быстрого деплоя
+- ⚡ Оптимизированная production сборка
 
-## Expanding the ESLint configuration
+## 🛠️ Разработка
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Приложение будет доступно на `http://localhost:5173`
+
+## 📦 Production сборка
+
+```bash
+npm run build
+npm run preview
+```
+
+## 🐳 Docker деплой
+
+```bash
+docker-compose up -d
+```
+
+Подробнее см. [DEPLOY.md](./DEPLOY.md)
+
+## 📁 Структура проекта
+
+Проект организован по принципам Feature-Sliced Design. Подробнее см. [FSD-STRUCTURE.md](./FSD-STRUCTURE.md)
+
+## 👤 Контакты
+
+- **Email**: shahnovich61@gmail.com
+- **Telegram**: [@ARSY_NN](https://t.me/ARSY_NN)
+- **GitHub**: [BackLagg](https://github.com/BackLagg)
