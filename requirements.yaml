@@ -1,0 +1,26 @@
+packages:
+  "framer-motion": "For page transitions, scroll animations, and micro-interactions"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+
+images:
+  - path: "artifacts/portfolio/public/images/hero-bg.png"
+    description: "Abstract dark gradient mesh with glowing cyan and purple neon light leaks, modern 3d render style, high resolution, completely dark background"
+    aspect_ratio: "16:9"
+  - path: "artifacts/portfolio/public/images/avatar.png"
+    description: "Stylish abstract 3D stylized avatar profile picture of a professional developer, neon lighting accents, dark background, minimal and elegant"
+    aspect_ratio: "1:1"
+  - path: "artifacts/portfolio/public/images/project-1.png"
+    description: "Abstract modern web application interface dashboard 3d render mockup, dark mode, glowing purple accents, clean minimalist UI"
+    aspect_ratio: "16:9"
+  - path: "artifacts/portfolio/public/images/project-2.png"
+    description: "Abstract minimal mobile application interface mockup floating in dark space, neon cyan accents, sleek design"
+    aspect_ratio: "16:9"
+  - path: "artifacts/portfolio/public/images/project-3.png"
+    description: "Abstract data visualization charts floating in dark 3d space, cyberpunk color palette, high tech professional look"
+    aspect_ratio: "16:9"
+
+notes:
+  - Static personal portfolio, no backend API needed
+  - Uses framer-motion for heavy animation lifting
+  - One page layout with smooth scrolling anchor links

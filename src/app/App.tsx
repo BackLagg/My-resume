@@ -1,31 +1,30 @@
-import { useEffect, useState } from 'react'
-import { Hero } from '@/widgets/Hero'
-import { About } from '@/widgets/About'
-import { Skills } from '@/widgets/Skills'
-import { Projects } from '@/widgets/Projects'
-import { CallToAction } from '@/widgets/CallToAction'
-import { Footer } from '@/widgets/Footer'
-import { GridBackground } from '@/shared/ui/GridBackground'
-import styles from './App.module.scss'
+import { Switch, Route, Router as WouterRouter } from "wouter";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/shared/ui";
+import { TooltipProvider } from "@/shared/ui";
+import NotFoundPage from "@/pages/not-found/page";
+import HomePage from "@/pages/home/page";
+import { queryClient } from "./providers/query-client";
 
-export const App = () => {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setTimeout(() => setIsVisible(true), 100)
-  }, [])
-
+function Router() {
   return (
-    <>
-      <GridBackground />
-      <main className={`${styles.app} ${isVisible ? styles.visible : ''}`}>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <CallToAction />
-        <Footer />
-      </main>
-    </>
-  )
+    <Switch>
+      <Route path="/" component={HomePage} />
+      <Route component={NotFoundPage} />
+    </Switch>
+  );
 }
+
+export function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
+        </WouterRouter>
+        <Toaster />
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
+
