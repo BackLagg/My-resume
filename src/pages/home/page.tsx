@@ -1,10 +1,10 @@
 import { Navbar } from "@/widgets/navbar/ui/navbar";
-import { Hero } from "@/widgets/hero/ui/hero";
-import { About } from "@/widgets/about/ui/about";
-import { Skills } from "@/widgets/skills/ui/skills";
-import { Projects } from "@/widgets/projects/ui/projects";
+import { Hero } from "@/widgets/Hero/ui/Hero";
+import { About } from "@/widgets/About/ui/About";
+import { Skills } from "@/widgets/Skills/ui/Skills";
+import { Projects } from "@/widgets/Projects/ui/Projects";
 import { Contact } from "@/widgets/contact/ui/contact";
-import { Footer } from "@/widgets/footer/ui/footer";
+import { Footer } from "@/widgets/Footer/ui/Footer";
 
 export default function HomePage() {
   return (
